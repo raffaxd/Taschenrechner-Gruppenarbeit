@@ -1,25 +1,44 @@
-Mein Währungsrechner für die Gruppenarbeit
- 
-Es ist ein einfacher Währungsrechner, der im Terminal läuft.
+# Multifunktionstaschenrechner
 
-Das Programm kann sich die aktuellsten Wechselkurse aus dem Internet ziehen und damit dann Beträge umrechnen. Man kann entweder die offiziellen Kürzel (wie EUR, USD) oder auch einfach die Namen (wie Euro, Dollar) eingeben.
+Dieses Projekt ist eine befehlszeilenbasierte Multi-Tool-Anwendung, die in Python geschrieben wurde. Es bietet eine Sammlung nützlicher Rechner, die über ein Hauptmenü zugänglich sind.
 
-Die Daten für die Kurse kommen von der Frankfurter App API.
+## Funktionen
 
-Wie man es startet
+*   **Standard-Taschenrechner:** Führt grundlegende arithmetische Operationen wie Addition, Subtraktion, Multiplikation und Division aus.
+*   **Währungsrechner:** Ruft die neuesten Wechselkurse von der Frankfurter.app-API ab, um zwischen verschiedenen Währungen umzurechnen. Die Kurse werden lokal zwischengespeichert, um die Anzahl der API-Aufrufe zu minimieren.
+*   **IP-Rechner:** Berechnet Netzwerkinformationen (Netzwerkadresse, Broadcast-Adresse, nutzbare Hosts usw.) aus einer gegebenen IP-Adresse und Subnetzmaske im CIDR-Format.
 
-Python: Du brauchst Python auf deinem Rechner, damit du das Skript ausführen kannst.
+## Technologien
 
-Bibliotheken installieren: Damit das Programm die Daten aus dem Internet laden kann, muss man eine kleine Bibliothek namens  requests  installieren. Am einfachsten geht das, wenn du im Projektordner diesen Befehl im Terminal eingibst: pip install -r requirements.txt
+*   **Python 3:** Die Kernprogrammiersprache.
+*   **requests:** Eine Python-Bibliothek zur Durchführung von HTTP-Anfragen an die Währungs-API.
 
-Programm starten: Danach kannst du das Programm einfach mit diesem Befehl starten: python main.py. Das Menü erklärt sich dann eigentlich von selbst.
+## Architektur
 
-Aufbau vom Projekt
+Die Anwendung ist in einer einzigen Datei (`main.py`) strukturiert, die die gesamte Logik enthält:
 
-Ich habe versucht, den Code ein bisschen aufzuteilen, damit es übersichtlich bleibt:
+*   **`main.py`**: Dient als Einstiegspunkt der Anwendung. Die Datei enthält das Hauptmenü zur Auswahl der Werkzeuge sowie die vollständige Implementierung des Taschenrechners, des Währungsrechners und des IP-Rechners. Sie verwaltet auch die API-Aufrufe zum Abrufen von Wechselkursen und deren lokale Speicherung.
 
-main.py : Das ist die Hauptdatei, die man startet. Hier ist das Menü und die ganze Logik drin, die alles zusammenhält.
-api_client.py : Dieses Skript holt die Daten aus dem Internet von der API.
-data_manager.py : Das hier kümmert sich um das Speichern und Laden der Kurse. Die werden in der  exchange_rates.json  zwischengespeichert.
-requirements.txt : Hier steht nur drin, welche Bibliotheken man für das Projekt braucht (in dem Fall nur  requests).
-exchange_rates.json : In dieser Datei werden die Kurse gespeichert, damit man sie nicht bei jedem Start neu aus dem Internet laden muss.
+## Installation und Ausführung
+
+### 1. Voraussetzungen
+
+*   Stellen Sie sicher, dass Python 3 auf Ihrem System installiert ist.
+
+### 2. Installation der Abhängigkeiten
+
+Navigieren Sie zum Projektverzeichnis und installieren Sie die erforderlichen Pakete mit dem folgenden Befehl:
+
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Starten der Anwendung
+
+Um die Anwendung zu starten, führen Sie das Hauptskript aus:
+
+```bash
+python main.py
+```
+
+Anschließend wird ein Menü angezeigt, in dem Sie das gewünschte Werkzeug auswählen können.
